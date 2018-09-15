@@ -1,0 +1,1 @@
+export const SKILLS_FETCHED = 'SKILLS_FETCHED';

@@ -2,7 +2,7 @@ import * as actionTypes from '../actionTypes';
 
 export function loadInfo(data) {
   return {
-    type: actionTypes.SKILL_FETCHED,
+    type: actionTypes.SKILLS_FETCHED,
     payload: data,
   };
 }
