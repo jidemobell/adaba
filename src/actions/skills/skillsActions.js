@@ -14,7 +14,6 @@ export function getSkills() {
     })
       .then(response => response.json())
       .then((json) => {
-        console.log(json);
         dispatch(loadInfo(json));
       });
   };
