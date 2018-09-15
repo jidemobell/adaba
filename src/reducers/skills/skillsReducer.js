@@ -1,10 +1,12 @@
 import * as actionTypes from '../../actions/actionTypes';
 
-export default function (state = {}, action) {
+const skillsReducer = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SKILLS_FETCHED:
-      return { ...state, authenticated: true };
+      return { ...state, skills: action.payload };
     default:
       return state;
   }
-}
+};
+
+export default skillsReducer;
