@@ -4,7 +4,7 @@ import skillsReducer from './skills/skillsReducer';
 
 
 const rootReducer = combineReducers({
-  user: skillsReducer,
+  stateData: skillsReducer,
   form: formReducer,
 });
 
