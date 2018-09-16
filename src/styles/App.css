@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono|Yantramanav');
+
+.openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Roboto {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.Yanta {
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.container {
+  width: 900px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.heading{
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+/* div flex-container that contains the wrapper form  */
+.skills-form {     
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* flexbox wrapper for form items */
+.form-controller {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-input,
+.select-input,
+.form-button {
+  margin-right: 25px;
+}
+
+/* .form-input {
+  width: 350px;
+} */
+
+input[type=text] {
+  width: 350px;
+  height: 50px;
+  border: 0.5px solid #34495E;
+  border-radius: 2px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* .select-input {
+  width: 300px;
+} */
+
+.select-input {
+  padding: 16px 20px;
+  border: 0.5px solid #34495E;
+  border-radius: 2px;
+  width: 300px;
+  height: 50px;
+  font-weight: 100;
+  font-size: 15px;
+  padding-bottom: 3px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+
+.select-input::after {
+  color: red;
+}
+
+.options {
+  font-size: 10px;
+  color: #34495E;
+  height: 90px;
+  background-color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* .form-button {
+  width: 150px
+} */
+
+input[type=submit]{
+  background-color: #34495E;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  padding: 0px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+input[type=submit]:hover {
+  background-color: #617181;
+}
+
+.skill-box{
+  display: flex;
+  justify-content: center;
+}
+
+.skills {
+  width: 830px;
+  height: 50px;
+  background-color: #F4F5F6;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 24px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  color: #34495E;
+  width:150px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #F4F5F6;
+}
+
+.card:hover{
+  border: 1px solid #E2E3E5;
+}
+
+.card .card-header {
+  background-color: #34495E;
+  color: white;
+  height: 50px;
+  width: 16px;
+}
+
+.card-header:hover{
+  background-color: #1A998E;
+}
+
+.card .card-base {
+  margin-left: 10px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.card h6{
+  margin-top: 1px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.card span {
+  margin-top: 0px;
+  margin-left: 4px;
+  color: #D1D4D6;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.card-header h6 {
+  margin-left: 4px;
+  font-family: 'Roboto Mono', monospace;
+}
