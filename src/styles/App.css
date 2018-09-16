@@ -76,6 +76,10 @@ input[type=text] {
   font-weight: bold;
 }
 
+.select-input .options-selected {
+  display: none;
+}
+
 .select-input::after {
   color: red;
 }
