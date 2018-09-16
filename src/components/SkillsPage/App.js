@@ -5,6 +5,8 @@ import '../../styles/response.css';
 import SkillCard from '../skillCard/SkillCard';
 import Form from '../SkillsForm/Form';
 
+// skillCard to be added to skills div onSubmit
+// from a skillset array.
 
 class App extends React.Component {
   render() {
