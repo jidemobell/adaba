@@ -1,9 +1,11 @@
 // send options values and skills to state
+// handlesubmit will add a skillcard
+
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 
-const skillForm = ({ handleSubmit }) => {
+const skillForm = ({ handleSubmit, pristine, submitting, valid }) => {
   return (
     <form className="form-controller" onSubmit={handleSubmit(val => console.log(val))}>
       <div className="form-item">
@@ -32,11 +34,11 @@ const skillForm = ({ handleSubmit }) => {
         </Field>
       </div>
       <div className="form-item">
-        <input type="submit" value="Submit" className="form-button" />
+        <input type="submit" value="Submit" className="form-button" disabled={!valid || pristine || submitting} />
       </div>
     </form>
   );
 };
 
 
-export default reduxForm({ form: 'skillForm' })(skillForm);
+export default reduxForm({ form: 'skillForm', id: 25 })(skillForm);
