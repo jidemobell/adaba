@@ -1,5 +1,7 @@
-import React from 'react';
+// to recieve skill and options value from form
+// from the state to local props
 
+import React from 'react';
 
 class SkillCard extends React.Component {
   render() {

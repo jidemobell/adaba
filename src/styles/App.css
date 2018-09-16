@@ -49,7 +49,17 @@
   width: 350px;
 } */
 
-input[type=text] {
+/* input[type=text] {
+  width: 350px;
+  height: 50px;
+  border: 0.5px solid #34495E;
+  border-radius: 2px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: 'Roboto Mono', monospace;
+} */
+
+.form-input {
   width: 350px;
   height: 50px;
   border: 0.5px solid #34495E;
