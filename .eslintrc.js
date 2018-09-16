@@ -21,6 +21,7 @@ module.exports = {
     "react/jsx-no-bind":0,
     "react/prefer-stateless-function":0,
     "import/prefer-default-export":0,
-    "react/self-closing-comp":0
+    "react/self-closing-comp":0,
+    "quotes":0
   }
 }
