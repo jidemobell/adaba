@@ -23,6 +23,7 @@ module.exports = {
     "import/prefer-default-export":0,
     "react/self-closing-comp":0,
     "quotes":0,
-    "react/prop-types":0
+    "react/prop-types":0,
+    "object-curly-newline":0
   }
 }
