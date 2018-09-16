@@ -9,8 +9,12 @@ class Form extends React.Component {
         </div>
         <div className="form-item">
           <select name="cars" className="select-input">
-            <option value=" " selected className="options">Experience</option>
-            <option value="1" className="options">1 Year</option>
+            <option value=" " className="options  options-selected" selected>Experience</option>
+            <option value="1" className="options">{`<1 Year`}</option>
+            <option value="1" className="options">1 - 3 Years</option>
+            <option value="1" className="options">3 - 5 Years</option>
+            <option value="1" className="options">5 - 5 Years</option>
+            <option value="1" className="options">7+ Years</option>
           </select>
         </div>
         <div className="form-item">
