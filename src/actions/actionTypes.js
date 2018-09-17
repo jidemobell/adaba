@@ -1,1 +1,2 @@
 export const SKILLS_FETCHED = 'SKILLS_FETCHED';
+export const SKILL_POSTED = 'SKILL_POSTED';
