@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../../styles/App.css';
-import '../../styles/response.css';
 
 import * as skillsActions from '../../actions/skills/skillsActions';
 
 import SkillCard from '../skillCard/SkillCard';
-import Form from '../SkillsForm/Form';
+import Form from '../../containers/Form/Form';
 
 class SkillApp extends React.Component {
   componentDidMount() {
