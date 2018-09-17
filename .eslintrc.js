@@ -24,6 +24,7 @@ module.exports = {
     "react/self-closing-comp":0,
     "quotes":0,
     "react/prop-types":0,
-    "object-curly-newline":0
+    "object-curly-newline":0,
+    "no-unused-vars":0
   }
 }
