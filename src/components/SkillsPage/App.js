@@ -9,16 +9,20 @@ import * as skillsActions from '../../actions/skills/skillsActions';
 import SkillCard from '../skillCard/SkillCard';
 import Form from '../SkillsForm/Form';
 
-// skillCard to be added to skills div onSubmit
-// from a skillset array.
-
 class SkillApp extends React.Component {
   componentDidMount() {
     const { actions } = this.props;
     actions.getSkills();
   }
 
+  getSkillsFromState() {
+    const { skillsArray } = this.props;
+    return (skillsArray === undefined) ? [] : skillsArray;
+  }
+
+
   render() {
+    const skillsArray = this.getSkillsFromState();
     return (
       <div>
         <div className="container">
@@ -28,8 +32,16 @@ class SkillApp extends React.Component {
           </div>
           <div className="skill-box">
             <div className="skills">
-              <SkillCard />
-              <SkillCard />
+              {skillsArray.map((skillSet, i) => {
+                return (
+                  <SkillCard
+                    key={`key-${skillSet.name}`}
+                    skillIndex={i + 1}
+                    skillName={skillSet.name}
+                    skillExperience={skillSet.expirience}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
@@ -39,9 +51,8 @@ class SkillApp extends React.Component {
 }
 
 const mapStatetToProps = (state) => {
-  console.log(state);
   return {
-
+    skillsArray: state.stateData.skills,
   };
 };
 
