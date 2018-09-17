@@ -19,5 +19,3 @@ const mapDispatchToProps = (dispatch) => {
 const Form = connect(mapStatetToProps, mapDispatchToProps)(RenderForm);
 
 export default Form;
-
-// export default reduxForm({ form: 'skillForm', validate: formValidator })(Form); 
