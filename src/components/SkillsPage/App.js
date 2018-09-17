@@ -49,19 +49,21 @@ class SkillApp extends React.Component {
   }
 }
 
-const mapStatetToProps = (state) => {
-  return {
-    skillsArray: state.stateData.skills,
-  };
-};
+export default SkillApp;
+
+// const mapStatetToProps = (state) => {
+//   return {
+//     skillsArray: state.stateData.skills,
+//   };
+// };
 
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(Object.assign(skillsActions), dispatch),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     actions: bindActionCreators(Object.assign(skillsActions), dispatch),
+//   };
+// };
 
-const App = connect(mapStatetToProps, mapDispatchToProps)(SkillApp);
+// const App = connect(mapStatetToProps, mapDispatchToProps)(SkillApp);
 
-export default App;
+// export default App;
