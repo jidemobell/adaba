@@ -1,9 +1,5 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
-import * as skillsActions from '../../actions/skills/skillsActions';
 
 const formValidator = (values) => {
   const errors = {};
