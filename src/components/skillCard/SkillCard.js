@@ -1,18 +1,17 @@
-// to recieve skill and options value from form
-// from the state to local props
 
 import React from 'react';
 
 class SkillCard extends React.Component {
   render() {
+    const { skillIndex, skillName, skillExperience } = this.props;
     return (
       <div className="card">
         <div className="card-header">
-          <h6>1</h6>
+          <h6>{skillIndex}</h6>
         </div>
         <div className="card-base">
-          <h6>React</h6>
-          <span>1 Year</span>
+          <h6>{skillName}</h6>
+          <span>{skillExperience}</span>
         </div>
       </div>
     );
