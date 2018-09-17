@@ -86,18 +86,21 @@ class RenderForm extends React.Component {
   }
 }
 
-const mapStatetToProps = (state) => {
-  return {
-    appState: state.stateData,
-  };
-};
+export default reduxForm({ form: 'skillForm', validate: formValidator })(RenderForm);
+// export default RenderForm;
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(Object.assign(skillsActions), dispatch),
-  };
-};
+// const mapStatetToProps = (state) => {
+//   return {
+//     appState: state.stateData,
+//   };
+// };
 
-const Form = connect(mapStatetToProps, mapDispatchToProps)(RenderForm);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     actions: bindActionCreators(Object.assign(skillsActions), dispatch),
+//   };
+// };
 
-export default reduxForm({ form: 'skillForm', validate: formValidator })(Form);
+// const Form = connect(mapStatetToProps, mapDispatchToProps)(RenderForm);
+
+// export default reduxForm({ form: 'skillForm', validate: formValidator })(Form);
