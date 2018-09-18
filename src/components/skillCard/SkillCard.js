@@ -3,10 +3,10 @@ import React from 'react';
 
 class SkillCard extends React.Component {
   render() {
-    const { skillIndex, skillName, skillExperience } = this.props;
+    const { skillIndex, skillName, skillExperience, cardClass } = this.props;
     return (
       <div className="card">
-        <div className="card-header">
+        <div className={cardClass}>
           <h6>{skillIndex}</h6>
         </div>
         <div className="card-base">
