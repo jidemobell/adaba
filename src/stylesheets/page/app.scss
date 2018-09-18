@@ -2,8 +2,6 @@
 @import "../helpers/mixins";
 
 .container {
-  // width: 900px;
-  // height: 400px;
   margin: {
       left: auto;
       right: auto;
@@ -48,7 +46,6 @@
   }
   
   .form-controller {
-    // justify-content: flex-start;
     flex-direction: column;
     margin-bottom: 90px;
   }
@@ -67,54 +64,16 @@
   }
 }
 
-/* Tablet Styles 425 >*/
-@media only screen and (min-width: 422px) and (max-width: 960px) {
-  .container {
-    width: 900px;
-    height: 400px;
-    margin: {
-        left: auto;
-        right: auto;
-    }
-    position: relative;
-  }
+/* Tablet Styles 425 > keep view same as desktop*/
+// @media only screen and (min-width: 422px) and (max-width: 960px) {
   
-  .skills-form {
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-controller {
-    justify-content: space-evenly;
-  }
-  
-  .skill-box {
-    justify-content: center;
-  }
-  
-  .skills {
-    width: 830px;
-    background-color: #F4F5F6;
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 24px;
-    flex-direction: row;
-    align-items: center;
-    overflow-y: auto;
-  }
-}
+// }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .container {
     width: 900px;
     height: 400px;
-    // margin: {
-    //     left: auto;
-    //     right: auto;
-    // }
-    // position: relative;
   }
   
   .skills-form {
