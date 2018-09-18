@@ -59,6 +59,7 @@ class RenderForm extends React.Component {
             className="form-input"
           />
         </div>
+        <div className="last-two-items">
         <div className="form-item">
           <Field
             type="input"
@@ -76,6 +77,7 @@ class RenderForm extends React.Component {
         </div>
         <div className="form-item">
           <input type="submit" value="Submit" className="form-button" disabled={!valid || pristine || submitting} />
+        </div>
         </div>
       </form>
     );
