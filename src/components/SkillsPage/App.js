@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import '../../styles/App.css';
 
-import * as skillsActions from '../../actions/skills/skillsActions';
+
+import '../../stylesheets/main.scss';
+
 
 import SkillCard from '../skillCard/SkillCard';
 import Form from '../../containers/Form/Form';
@@ -34,7 +33,7 @@ class SkillApp extends React.Component {
               {skillsArray.map((skillSet, i) => {
                 return (
                   <SkillCard
-                    key={`key-${skillSet.name}`}
+                    key={`key-${skillSet.id}`}
                     skillIndex={i + 1}
                     skillName={skillSet.name}
                     skillExperience={skillSet.expirience}
@@ -50,20 +49,3 @@ class SkillApp extends React.Component {
 }
 
 export default SkillApp;
-
-// const mapStatetToProps = (state) => {
-//   return {
-//     skillsArray: state.stateData.skills,
-//   };
-// };
-
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     actions: bindActionCreators(Object.assign(skillsActions), dispatch),
-//   };
-// };
-
-// const App = connect(mapStatetToProps, mapDispatchToProps)(SkillApp);
-
-// export default App;
