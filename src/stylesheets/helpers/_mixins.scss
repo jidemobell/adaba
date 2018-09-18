@@ -1,0 +1,24 @@
+
+@mixin themes-border($width, $color:$theme_color) {
+  border: {
+    color: $color;
+    width: $width;
+    style: solid
+  }
+}
+
+@mixin hover-background($color){
+  &:hover {
+    background-color: $color;
+ }
+}
+
+@mixin hover-border($color,$width){
+  &:hover {
+    border: {
+      color: $color;
+      width: $width;
+      style: solid
+    }
+ }
+}

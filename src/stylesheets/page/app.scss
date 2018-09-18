@@ -1,0 +1,48 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.container {
+  width: 900px;
+  height: 400px;
+  margin: {
+      left: auto;
+      right: auto;
+  }
+  position: relative;
+}
+
+.heading {
+  margin-bottom: 30px;
+  font: {
+    size: 25px;
+    family: $yanta;
+  }
+}
+
+.skills-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-controller {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.skill-box {
+  display: flex;
+  justify-content: center;
+}
+
+.skills {
+  width: 830px;
+  background-color: #F4F5F6;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 24px;
+  flex-direction: row;
+  align-items: center;
+  overflow-y: auto;
+}

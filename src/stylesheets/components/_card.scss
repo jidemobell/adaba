@@ -1,0 +1,54 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+
+
+.card {
+    @include themes-border(1px,#F4F5F6);
+    background-color: white;
+    color: $theme_color;
+    width: 150px;
+    height: 50px;
+    margin: {
+        right: 10px;
+        bottom: 10px;
+    }
+    display: flex;
+    flex: {
+        wrap: wrap;
+        direction: row;
+    }
+    align-items: center;
+    h6 {
+        margin: {
+            top: 1px;
+            bottom: 10px;
+        }
+        font-family: $roboto;
+    }
+    span {
+        margin: {
+            top: 0;
+            left: 4px;
+        }
+        color: #D1D4D6;
+        font-family: $roboto;
+    }
+    .card-header {
+      background-color: $theme_color;
+      color: white;
+      height: 50px;
+      width: 16px;
+      h6 {
+          margin-left: 4px;
+          font-family: $roboto;
+      }
+      @include hover-background(#1A998E);
+    }
+    
+    .card-base {
+      margin-left: 10px;
+      font-family: $roboto;
+    }
+    @include hover-border(#E2E3E5,1px);
+}
