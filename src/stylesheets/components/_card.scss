@@ -35,6 +35,17 @@
         font-family: $roboto;
     }
     .card-header {
+      background-color: #80878B;
+      color: white;
+      height: 50px;
+      width: 16px;
+      h6 {
+          margin-left: 4px;
+          font-family: $roboto;
+      }
+      @include hover-background(#1A998E);
+    }
+    .card-header-two {
       background-color: $theme_color;
       color: white;
       height: 50px;
@@ -45,7 +56,6 @@
       }
       @include hover-background(#1A998E);
     }
-    
     .card-base {
       margin-left: 10px;
       font-family: $roboto;
