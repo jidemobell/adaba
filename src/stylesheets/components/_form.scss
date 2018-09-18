@@ -1,6 +1,10 @@
 @import "../helpers/variables";
 @import "../helpers/mixins";
 
+.last-two-items {
+  display: flex;
+}
+
 .form-input {
   @include themes-border(0.5px);
   width: 350px;
@@ -66,3 +70,28 @@
   }
   @include hover-background(#617181);
 }
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 420px) {
+  .form-item {
+    margin-bottom: 15px;
+  }
+  .form-input {
+    height: 80px;
+    width: 850px;
+  }
+  .select-input {
+    width: 578px;
+    height: 70px;
+  }
+  .form-button {
+    height: 69px;
+    width: 257px;
+  }
+  .heading {
+    font-size: 41px;
+    margin-bottom: 12px;
+  }
+}
+
