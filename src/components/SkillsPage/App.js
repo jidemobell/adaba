@@ -37,6 +37,7 @@ class SkillApp extends React.Component {
                     skillIndex={i + 1}
                     skillName={skillSet.name}
                     skillExperience={skillSet.expirience}
+                    cardClass={(i < 4) ? 'card-header-two' : 'card-header'}
                   />
                 );
               })}
