@@ -6,7 +6,6 @@
       left: auto;
       right: auto;
   }
-  position: relative;
   display: flex;
   flex-wrap: wrap
 }
@@ -14,8 +13,8 @@
 .heading {
   margin-bottom: 15px;
   font: {
-    size: 25px;
     family: $yanta;
+    color:#25333C;
   }
 }
 
@@ -33,21 +32,19 @@
 
 /* Mobile Styles */
 @media only screen and (max-width: 420px) {
-  .container {
-    width: 900px;
-    height: 400px;
-    flex-wrap: unset;
-    flex-direction: column;
+
+  .heading {
+    font-size: 15px;
   }
 
   .skills-form {
     justify-content: flex-start;
-    margin-bottom: 60px;
+    margin-bottom: -25px;
   }
   
   .form-controller {
     flex-direction: column;
-    margin-bottom: 90px;
+    margin-bottom: -24px;
   }
 
   .skill-box {
@@ -64,16 +61,39 @@
   }
 }
 
-/* Tablet Styles 425 > keep view same as desktop*/
-// @media only screen and (min-width: 422px) and (max-width: 960px) {
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .skills-form {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
   
-// }
+  .form-controller {
+    justify-content: space-evenly;
+  }
+  
+  .skill-box {
+    justify-content: center;
+  }
+  
+  .skills {
+    width: 830px;
+    background-color: #F4F5F6;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 24px;
+    flex-direction: row;
+    align-items: center;
+    overflow-y: auto;
+  }
+}
+
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .container {
     width: 900px;
-    height: 400px;
   }
   
   .skills-form {
