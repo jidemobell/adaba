@@ -7,6 +7,7 @@ import '../../stylesheets/main.scss';
 import SkillCard from '../skillCard/SkillCard';
 import Form from '../../containers/Form/Form';
 
+
 class SkillApp extends React.Component {
   componentDidMount() {
     const { actions } = this.props;
@@ -22,7 +23,7 @@ class SkillApp extends React.Component {
   render() {
     const skillsArray = this.getSkillsFromState();
     return (
-      <div>
+      <div className="to-test">
         <div className="container">
           <h1 className="heading">ADD YOUR SKILLS</h1>
           <div className="skills-form">
@@ -37,6 +38,7 @@ class SkillApp extends React.Component {
                     skillIndex={i + 1}
                     skillName={skillSet.name}
                     skillExperience={skillSet.expirience}
+                    // a class name is passed to this component based on count
                     cardClass={(i < 4) ? 'card-header-two' : 'card-header'}
                   />
                 );
