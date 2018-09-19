@@ -2,9 +2,46 @@
 @import "../helpers/mixins";
 
 
+.delete {
+  color: black;
+  position: relative;
+  left:25px;
+  top: -24px;
+  display: none;
+  cursor: pointer;
+}
+
+.card-header-two {
+  background-color: $theme_color;
+  color: white;
+  height: 50px;
+  width: 16px;
+  h6 {
+      margin-left: 4px;
+      font-family: $roboto;
+  }
+  @include hover-background(#1A998E);
+}
+
+.card-header {
+  background-color: #80878B;
+  color: white;
+  height: 50px;
+  width: 16px;
+  h6 {
+      margin-left: 4px;
+      font-family: $roboto;
+  }
+  @include hover-background(#1A998E);
+}
+.card-base {
+  margin-left: 10px;
+  font-family: $roboto;
+}
 
 .card {
     @include themes-border(1px,#F4F5F6);
+    @include hover-border(#E2E3E5,1px);
     background-color: white;
     color: $theme_color;
     width: 150px;
@@ -34,42 +71,22 @@
         color: #D1D4D6;
         font-family: $roboto;
     }
-    .card-header {
-      background-color: #80878B;
-      color: white;
-      height: 50px;
-      width: 16px;
-      h6 {
-          margin-left: 4px;
-          font-family: $roboto;
-      }
-      @include hover-background(#1A998E);
+    &:hover .delete {
+      display: inline;
     }
-    .card-header-two {
-      background-color: $theme_color;
-      color: white;
-      height: 50px;
-      width: 16px;
-      h6 {
-          margin-left: 4px;
-          font-family: $roboto;
-      }
-      @include hover-background(#1A998E);
-    }
-    .card-base {
-      margin-left: 10px;
-      font-family: $roboto;
-    }
-    @include hover-border(#E2E3E5,1px);
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 400px) {
   .card {
-    width: 858px;
+    width: 400px;
     border-width: 3px;
-    height: 100px;
+    height: 50px;
     .card-header {
       height: 100px;
+    }
+    &:hover .delete {
+      display: inline;
+      left:268px;
     }
   }  
 }
