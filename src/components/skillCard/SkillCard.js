@@ -12,6 +12,7 @@ class SkillCard extends React.Component {
         <div className="card-base">
           <h6>{skillName}</h6>
           <span>{skillExperience}</span>
+          <span className="delete">X</span>
         </div>
       </div>
     );
