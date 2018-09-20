@@ -4,7 +4,7 @@
   "description": "A skill selector app",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha",
     "clear": "jest --clearCache",
     "dev": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode production"
