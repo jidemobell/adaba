@@ -72,7 +72,7 @@ class RenderForm extends React.Component {
               className="select-input"
             >
               <option value=" " className="options  options-selected">Experience</option>
-              <option value="< 1" className="options">{`<1 Year`}</option>
+              <option value="<1 Year" className="options">{`<1 Year`}</option>
               <option value="2 Years" className="options">1 - 3 Years</option>
               <option value="4 Years" className="options">3 - 5 Years</option>
               <option value="6 Years" className="options">5 - 7Years</option>
