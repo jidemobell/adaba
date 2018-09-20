@@ -7,9 +7,10 @@ import * as skillsActions from '../../actions/skills/skillsActions';
 
 class SkillCardComponent extends React.Component {
   handleClick(e) {
-    const { actions, skillsArray, skillIndex } = this.props;
-    actions.pushDelete(skillsArray[skillIndex]).then(() => {
+    const { actions, skillsArray, skillName, skillIndex } = this.props;
+    actions.pushDelete(skillsArray[skillIndex - 1]).then(() => {
       actions.getSkills();
+      this.forceUpdate();
     });
   }
 
@@ -28,7 +29,7 @@ class SkillCardComponent extends React.Component {
             onClick={e => this.handleClick(e)}
             role="presentation"
           >
-                  X
+            X
           </span>
         </div>
       </div>
