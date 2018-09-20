@@ -1,5 +1,3 @@
-
-import { reset } from 'redux-form';
 import * as actionTypes from '../actionTypes';
 
 export function getInfo(data) {
@@ -24,7 +22,6 @@ function loadError() {
 }
 
 export function getSkills() {
-  console.log('I am getting');
   return (dispatch) => {
     return fetch('http://localhost:3000/skills', {
       method: 'GET',
@@ -79,17 +76,6 @@ export function pushDelete(val) {
       .catch(error => dispatch(loadError()));
   };
 }
-
-// export function resetPushDeleteState() {
-//   return (dispatch) => {
-//     dispatch(() => {
-//       return {
-//         type: actionTypes.DELETE_PUSHED,
-//         payload: false, // sets it to false
-//       };
-//     });
-//   };
-// }
 
 
 export function skillSubmitSucces() {
