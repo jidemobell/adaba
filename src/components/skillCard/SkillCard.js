@@ -1,7 +1,18 @@
 
 import React from 'react';
 
-class SkillCard extends React.Component {
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as skillsActions from '../../actions/skills/skillsActions';
+
+class SkillCardComponent extends React.Component {
+  handleClick(e) {
+    const { actions, skillsArray, skillIndex } = this.props;
+    actions.pushDelete(skillsArray[skillIndex]).then(() => {
+      actions.getSkills();
+    });
+  }
+
   render() {
     const { skillIndex, skillName, skillExperience, cardClass } = this.props;
     return (
@@ -12,11 +23,33 @@ class SkillCard extends React.Component {
         <div className="card-base">
           <h6>{skillName}</h6>
           <span>{skillExperience}</span>
-          <span className="delete">X</span>
+          <span
+            className="delete"
+            onClick={e => this.handleClick(e)}
+            role="presentation"
+          >
+                  X
+          </span>
         </div>
       </div>
     );
   }
 }
+
+
+const mapStatetToProps = (state) => {
+  return {
+    skillsArray: state.stateData.skills,
+  };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(Object.assign(skillsActions), dispatch),
+  };
+};
+
+const SkillCard = connect(mapStatetToProps, mapDispatchToProps)(SkillCardComponent);
 
 export default SkillCard;
