@@ -6,6 +6,8 @@ const skillsReducer = (state = {}, action) => {
       return { ...state, skills: action.payload };
     case actionTypes.SKILL_POSTED:
       return { ...state, postAction: action.payload };
+    case actionTypes.SKILL_REMOVED:
+      return { ...state, deleteAction: action.payload };
     default:
       return state;
   }
