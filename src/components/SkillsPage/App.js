@@ -1,7 +1,9 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import '../../stylesheets/main.scss';
+import * as skillsActions from '../../actions/skills/skillsActions';
 
 
 import SkillCard from '../skillCard/SkillCard';
@@ -18,7 +20,6 @@ class SkillApp extends React.Component {
     const { skillsArray } = this.props;
     return (skillsArray === undefined) ? [] : skillsArray;
   }
-
 
   render() {
     const skillsArray = this.getSkillsFromState();
@@ -38,8 +39,7 @@ class SkillApp extends React.Component {
                     skillIndex={i + 1}
                     skillName={skillSet.name}
                     skillExperience={skillSet.expirience}
-                    // a class name is passed to this component based on count
-                    cardClass={(i < 4) ? 'card-header-two' : 'card-header'}
+                    cardClass={(i <= 4) ? 'card-header-two' : 'card-header'}
                   />
                 );
               })}
@@ -51,4 +51,21 @@ class SkillApp extends React.Component {
   }
 }
 
-export default SkillApp;
+
+const mapStatetToProps = (state) => {
+  return {
+    skillsArray: state.stateData.skills,
+    formValues: state.form.skillForm,
+  };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(Object.assign(skillsActions), dispatch),
+  };
+};
+
+const App = connect(mapStatetToProps, mapDispatchToProps)(SkillApp);
+
+export default App;
