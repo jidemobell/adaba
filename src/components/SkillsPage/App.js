@@ -13,6 +13,7 @@ class SkillApp extends React.Component {
     actions.getSkills();
   }
 
+
   getSkillsFromState() {
     const { skillsArray } = this.props;
     return (skillsArray === undefined) ? [] : skillsArray;
