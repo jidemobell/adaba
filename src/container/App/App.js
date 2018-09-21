@@ -23,3 +23,4 @@ const mapDispatchToProps = (dispatch) => {
 const App = connect(mapStatetToProps, mapDispatchToProps)(SkillApp);
 
 export default App;
+
