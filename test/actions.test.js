@@ -46,7 +46,7 @@ describe('actions return accurate payload', () => {
     const expectedPayload = { type: types.SKILL_POSTED }
     expect(actions[0].type).to.be.equal(expectedPayload.type);
     expect(actions[0].payload).to.be.equal(skill);
-    expect(actions[0].payload.name).to.be.equal('React');
+    expect(actions[0].payload.name).to.be.equal('React');ss
   })
 
   it('should dispatch pushDelete action', () => {
