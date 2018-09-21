@@ -7,10 +7,10 @@ import skillsReducer from './skills/skillsReducer';
 const rootReducer = combineReducers({
   stateData: skillsReducer,
   form: formReducer.plugin({
-    account: (state, action) => { // <------ 'account' is name of form given to reduxForm()
+    account: (state, action) => {
       switch (action.type) {
         case ACCOUNT_SAVE_SUCCESS:
-          return action.payload;       // <--- blow away form data
+          return action.payload;
         default:
           return state;
       }
