@@ -6,26 +6,16 @@ import * as actionsTypes from '../src/actions/skills/skillsActions';
 import nock from 'nock';
 
 const expect = require('chai').expect;
-const middlewares = [Thunk]; // add your middlewares like `redux-thunk`
+const middlewares = [Thunk]; 
 const mockStore = configureStore(middlewares);
 
-// Test in mocha
+
 
 
 describe('actions return accurate payload', () => {
   afterEach(() => {
     nock.cleanAll();
   });
-  it('should dispatch action', (done) => {
-    const getState = {}; 
-    const action = { type: types.SKILLS_FETCHED };
-    const expectedActions = [action];
-  
-    const store = mockStore(getState, expectedActions, done);
-    store.dispatch(action);
-    done();
-  })
-  
   
   it('should dispatch getSkills action', (done) => {
     const initialState = {}; 
