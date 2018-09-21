@@ -6,39 +6,27 @@ import { reduxForm, Field, reset, stopSubmit } from 'redux-form';
 import * as skillsActions from '../../actions/skills/skillsActions';
 
 
-const formValidator = (values) => { // eslint-disable-line consistent-return
-  const errors = {};
-  let errorState = false;
-  if (!values.name) {
-    errors.name = 'Skill is required';
-    errorState = true;
-  } else if (values.name.length < 4) {
-    errors.name = "Skill characters too short!";
-    errorState = true;
-  } else if (!values.expirience) {
-    errorState = true;
-  }
-  if (errorState) {
-    return errors;
-  }
+const required = (value) => {
+  return (value) ? undefined : 'Required';
+};
+
+const minValue = (value) => {
+  return value && value.length < 4 ? `Must be at least 4` : undefined;
 };
 
 
 const skillField = ({
   input,
-  type,
   placeholder,
-  name,
   className,
+  type,
   meta: { touched, error },
-}) => {
-  return (
-    <div>
-      <input {...input} placeholder={placeholder} type={type} name={name} className={className} />
-      {touched && error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
-  );
-};
+}) => (
+  <div>
+    <input {...input} type={type} placeholder={placeholder} className={className} />
+    {touched && ((error && <span style={{ color: 'red' }}>{error}</span>))}
+  </div>
+);
 
 class RenderForm extends React.Component {
   componentWillReceiveProps(nextProps) {
@@ -56,7 +44,7 @@ class RenderForm extends React.Component {
   }
 
   render() {
-    const { pristine, submitting, valid, handleSubmit, handleFormSubmit } = this.props;
+    const { submitting, handleSubmit, handleFormSubmit } = this.props;
 
     return (
       <form className="form-controller" onSubmit={handleSubmit(val => this.Submit(val))}>
@@ -67,6 +55,7 @@ class RenderForm extends React.Component {
             placeholder="Node.js, Postgres, React, etc.,"
             component={skillField}
             className="form-input"
+            validate={[required, minValue]}
           />
         </div>
         <div className="last-two-items">
@@ -90,7 +79,7 @@ class RenderForm extends React.Component {
               type="submit"
               value="Submit"
               className="form-button"
-              disabled={!valid || pristine || submitting}
+              disabled={submitting}
               onClick={handleFormSubmit}
             />
           </div>
@@ -114,6 +103,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const Form = connect(mapStatetToProps, mapDispatchToProps)(reduxForm({ form: 'skillForm', validate: formValidator })(RenderForm));
+const Form = connect(mapStatetToProps, mapDispatchToProps)(reduxForm({ form: 'skillForm' })(RenderForm));
 
 export default Form;
