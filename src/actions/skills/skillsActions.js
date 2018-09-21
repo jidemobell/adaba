@@ -13,11 +13,11 @@ export function getInfo(data) {
 }
 
 /**
- * This is function is used by the post-skill 
+ * This is function is used by the post-skill
  * action to load data to store
  * when a skill is submitted
  */
-function loadInfo(doc) {
+export function loadInfo(doc) {
   return {
     type: actionTypes.SKILL_POSTED,
     payload: doc,
@@ -35,10 +35,17 @@ function loadError() {
   };
 }
 
+export function deleteSkill() {
+  return {
+    type: actionTypes.SKILL_REMOVED,
+    payload: true,
+  };
+}
+
 /**
- * This function is the action function 
- * to fatch user skills and other skill 
- * details from the database. 
+ * This function is the action function
+ * to fatch user skills and other skill
+ * details from the database.
  */
 export function getSkills() {
   return (dispatch) => {
@@ -53,7 +60,7 @@ export function getSkills() {
 }
 
 /**
- * This function is the action called to 
+ * This function is the action called to
  * submit a nue user skill to the database
  */
 export function postSkills(val) {
@@ -76,7 +83,7 @@ export function postSkills(val) {
 
 /**
  * This function is used action called to
- * set a prop that a skill submission action 
+ * set a prop that a skill submission action
  * is yet to occur
  */
 
@@ -86,7 +93,7 @@ export function resetPostState() {
   };
 }
 
-/** 
+/**
  * This action is called when the delete-skill
  * mark is clicked.It returns a boolean payload
 */
@@ -100,18 +107,13 @@ export function pushDelete(val) {
       },
       body: JSON.stringify(values),
     })
-      .then(doc => dispatch(() => {
-        return {
-          type: actionTypes.SKILL_REMOVED,
-          payload: true,
-        };
-      }))
+      .then(doc => dispatch(deleteSkill()))
       .catch(error => dispatch(loadError()));
   };
 }
 
 /**
- * This action is used by the form reducer 
+ * This action is used by the form reducer
  * to reset form values.
  */
 
@@ -121,6 +123,18 @@ export function skillSubmitSucces() {
       return {
         type: actionTypes.ACCOUNT_SAVE_SUCCESS,
         payload: undefined,
+      };
+    });
+  };
+}
+
+
+export function loadSkill(array) {
+  return (dispatch) => {
+    dispatch(() => {
+      return {
+        type: actionTypes.SKILLS_FETCHED,
+        payload: array,
       };
     });
   };
