@@ -5,7 +5,6 @@ import nock from 'nock';
 
 import * as types from '../src/actions/actionTypes';
 import * as actionsTypes from '../src/actions/skills/skillsActions';
-import skillsReducer from '../src/reducers/skills/skillsReducer';
 
 
 const expect = require('chai').expect;
@@ -20,7 +19,7 @@ describe('actions return accurate payload', () => {
     nock.cleanAll();
   });
   
-  it('should dispatch getSkills action', (done) => {
+  it('should dispatch getSkills action', () => {
     const initialState = {}; 
     const store = mockStore(initialState);
     const testData = [{id:124, name: 'React', expirience: '6 Years'}];
@@ -34,11 +33,10 @@ describe('actions return accurate payload', () => {
     const actions = store.getActions();
     const expectedPayload = { type: types.SKILLS_FETCHED }
     expect(actions[0].type).to.be.equal(expectedPayload.type);
-    expect(JSON.parse(actions[0].payload)[0].id).to.be.equal(124);
-    done();  
+    expect(JSON.parse(actions[0].payload)[0].id).to.be.equal(124); 
   })
   
-  it('should dispatch postSkills action', (done) => {
+  it('should dispatch postSkills action', () => {
     const initialState = {}; 
     const store = mockStore(initialState);
     const skill = {id:124, name: 'React', expirience: '6 Years'};
@@ -49,10 +47,9 @@ describe('actions return accurate payload', () => {
     expect(actions[0].type).to.be.equal(expectedPayload.type);
     expect(actions[0].payload).to.be.equal(skill);
     expect(actions[0].payload.name).to.be.equal('React');
-    done();  
   })
 
-  it('should dispatch pushDelete action', (done) => {
+  it('should dispatch pushDelete action', () => {
     const initialState = {}; 
     const store = mockStore(initialState);
   
@@ -61,7 +58,6 @@ describe('actions return accurate payload', () => {
     const actions = store.getActions();
     const expectedPayload = { type: types.SKILL_REMOVED }
     expect(actions[0].type).to.be.equal(expectedPayload.type);
-    expect(actions[0].payload).to.be.true;
-    done();  
+    expect(actions[0].payload).to.be.true;  
   })
 });
