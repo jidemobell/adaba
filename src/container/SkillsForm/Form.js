@@ -1,20 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { reduxForm, Field, submit } from 'redux-form';
+import { reduxForm, Field, reset, stopSubmit } from 'redux-form';
 
 import * as skillsActions from '../../actions/skills/skillsActions';
 
-const formValidator = (values) => {
+
+const formValidator = (values) => { // eslint-disable-line consistent-return
   const errors = {};
+  let errorState = false;
   if (!values.name) {
     errors.name = 'Skill is required';
+    errorState = true;
   } else if (values.name.length < 4) {
     errors.name = "Skill characters too short!";
+    errorState = true;
   } else if (!values.expirience) {
-    errors.expirience = 'please select your experience range!';
+    errorState = true;
   }
-  return errors;
+  if (errorState) {
+    return errors;
+  }
 };
 
 
