@@ -18,6 +18,14 @@ For production environments...
 ```sh
 $ npm build
 ```
+
+Test...
+The app uses mocha/chai  and enzyme for testing
+```sh
+$ npm test
+```
+
+
 ## Built With
 
 * [React](https://reactjs.org)
